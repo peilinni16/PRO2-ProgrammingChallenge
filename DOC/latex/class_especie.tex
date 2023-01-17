@@ -1,0 +1,235 @@
+\hypertarget{class_especie}{}\section{Referencia de la Clase Especie}
+\label{class_especie}\index{Especie@{Especie}}
+
+
+Representa el conjunto de características y operaciones de las especies.  
+
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_especie_aa7219bcb41854d0f02b486fbfc0ce9a2}{Especie} (const string \&id1, const string \&g1, int \&k)
+\begin{DoxyCompactList}\small\item\em Constructora con condición. \end{DoxyCompactList}\item 
+string \hyperlink{class_especie_a2c3f4a6aa3337ce1fa7e8c7d5be73c50}{consultar\+\_\+ident} ()
+\begin{DoxyCompactList}\small\item\em Consulta el identificador. \end{DoxyCompactList}\item 
+string \hyperlink{class_especie_a352a338730450aa182e747ed88280e55}{consultar\+\_\+gen} ()
+\begin{DoxyCompactList}\small\item\em Consulta el gen. \end{DoxyCompactList}\item 
+map$<$ string, int $>$ \hyperlink{class_especie_a83ba0eee5730ca54986b741e982f1a07}{consultar\+\_\+kmer} () const
+\begin{DoxyCompactList}\small\item\em Consulta la cadena {\itshape kmer} del. \end{DoxyCompactList}\item 
+void \hyperlink{class_especie_afbfd4e6e131adf6a2a83e7c495a93a2a}{calc\+\_\+kmer} (const string \&g1, int \&k1)
+\begin{DoxyCompactList}\small\item\em Calcula kmer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_especie_a9efba6a1733042dab5c3cb63533e0628}{identificador}
+\begin{DoxyCompactList}\small\item\em Identificador de la especie. \end{DoxyCompactList}\item 
+string \hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen}
+\begin{DoxyCompactList}\small\item\em Gen de la especie. \end{DoxyCompactList}\item 
+map$<$ string, int $>$ \hyperlink{class_especie_ab6740db160f2d7335a98fa8d9f745cbe}{kmer}
+\begin{DoxyCompactList}\small\item\em Cadena de kmer de la especie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Representa el conjunto de características y operaciones de las especies. 
+
+Ofrece tres operaciones consultoras que devuelven el identificador, el gen y la cadena kmer del parámetro implícito. También contiene una operación modificadora que crea la cademna kmer.
+
+Dado que vamos a necesitar hacer operaciones con las especies, tenemos una constructora que forma una \hyperlink{class_especie}{Especie} mediante uns identificador, un gen y un natural k para formar los kmeros. 
+
+Definición en la línea 29 del archivo Especie.\+hh.
+
+
+
+\subsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{class_especie_aa7219bcb41854d0f02b486fbfc0ce9a2}\label{class_especie_aa7219bcb41854d0f02b486fbfc0ce9a2}} 
+\index{Especie@{Especie}!Especie@{Especie}}
+\index{Especie@{Especie}!Especie@{Especie}}
+\subsubsection{\texorpdfstring{Especie()}{Especie()}}
+{\footnotesize\ttfamily Especie\+::\+Especie (\begin{DoxyParamCaption}\item[{const string \&}]{id1,  }\item[{const string \&}]{g1,  }\item[{int \&}]{k }\end{DoxyParamCaption})}
+
+
+
+Constructora con condición. 
+
+\begin{DoxyPrecond}{Precondición}
+id1.\+size() $>$ 0 and g1.\+size() $>$ 0. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Crea una especie con ident \char`\"{}id1\char`\"{} y gen \char`\"{}g1\char`\"{}. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 8 del archivo Especie.\+cc.
+
+
+\begin{DoxyCode}
+9 \{
+10     \hyperlink{class_especie_a9efba6a1733042dab5c3cb63533e0628}{identificador} = id1;
+11     \hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen} = g1;
+12     \hyperlink{class_especie_afbfd4e6e131adf6a2a83e7c495a93a2a}{calc\_kmer}(g1, k1);
+13 \}
+\end{DoxyCode}
+
+
+\subsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{class_especie_a2c3f4a6aa3337ce1fa7e8c7d5be73c50}\label{class_especie_a2c3f4a6aa3337ce1fa7e8c7d5be73c50}} 
+\index{Especie@{Especie}!consultar\+\_\+ident@{consultar\+\_\+ident}}
+\index{consultar\+\_\+ident@{consultar\+\_\+ident}!Especie@{Especie}}
+\subsubsection{\texorpdfstring{consultar\+\_\+ident()}{consultar\_ident()}}
+{\footnotesize\ttfamily string Especie\+::consultar\+\_\+ident (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Consulta el identificador. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es el identificador del parámetro implícito. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 26 del archivo Especie.\+cc.
+
+
+\begin{DoxyCode}
+27 \{
+28     \textcolor{keywordflow}{return} \hyperlink{class_especie_a9efba6a1733042dab5c3cb63533e0628}{identificador};
+29 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_especie_a352a338730450aa182e747ed88280e55}\label{class_especie_a352a338730450aa182e747ed88280e55}} 
+\index{Especie@{Especie}!consultar\+\_\+gen@{consultar\+\_\+gen}}
+\index{consultar\+\_\+gen@{consultar\+\_\+gen}!Especie@{Especie}}
+\subsubsection{\texorpdfstring{consultar\+\_\+gen()}{consultar\_gen()}}
+{\footnotesize\ttfamily string Especie\+::consultar\+\_\+gen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Consulta el gen. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es el gen del parámetro implícito. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 31 del archivo Especie.\+cc.
+
+
+\begin{DoxyCode}
+32 \{
+33     \textcolor{keywordflow}{return} \hyperlink{class_especie_ac35bb565f7346cd6317b3a8c849456d1}{gen};
+34 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_especie_a83ba0eee5730ca54986b741e982f1a07}\label{class_especie_a83ba0eee5730ca54986b741e982f1a07}} 
+\index{Especie@{Especie}!consultar\+\_\+kmer@{consultar\+\_\+kmer}}
+\index{consultar\+\_\+kmer@{consultar\+\_\+kmer}!Especie@{Especie}}
+\subsubsection{\texorpdfstring{consultar\+\_\+kmer()}{consultar\_kmer()}}
+{\footnotesize\ttfamily map$<$ string, int $>$ Especie\+::consultar\+\_\+kmer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Consulta la cadena {\itshape kmer} del. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado son los kmeros del parámetro. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 36 del archivo Especie.\+cc.
+
+
+\begin{DoxyCode}
+37 \{
+38     \textcolor{keywordflow}{return} \hyperlink{class_especie_ab6740db160f2d7335a98fa8d9f745cbe}{kmer};
+39 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_especie_afbfd4e6e131adf6a2a83e7c495a93a2a}\label{class_especie_afbfd4e6e131adf6a2a83e7c495a93a2a}} 
+\index{Especie@{Especie}!calc\+\_\+kmer@{calc\+\_\+kmer}}
+\index{calc\+\_\+kmer@{calc\+\_\+kmer}!Especie@{Especie}}
+\subsubsection{\texorpdfstring{calc\+\_\+kmer()}{calc\_kmer()}}
+{\footnotesize\ttfamily void Especie\+::calc\+\_\+kmer (\begin{DoxyParamCaption}\item[{const string \&}]{g1,  }\item[{int \&}]{k1 }\end{DoxyParamCaption})}
+
+
+
+Calcula kmer. 
+
+\begin{DoxyPrecond}{Precondición}
+{\itshape cierto} 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El resultado es la cadena de k-\/meros 
+\end{DoxyPostcond}
+
+
+Definición en la línea 15 del archivo Especie.\+cc.
+
+
+\begin{DoxyCode}
+16 \{
+17   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < (g1.size()-k+1); ++i) \{
+18     \textcolor{keywordtype}{string} aux = g1.substr(i, k);
+19   
+20     pair<map<string, int>::iterator, \textcolor{keywordtype}{bool}> repe;
+21     repe = \hyperlink{class_especie_ab6740db160f2d7335a98fa8d9f745cbe}{kmer}.insert(make\_pair(aux, 1));
+22     \textcolor{keywordflow}{if} (not repe.second) ++(repe.first->second);    
+23     \}
+24 \}
+\end{DoxyCode}
+
+
+\subsection{Documentación de los datos miembro}
+\mbox{\Hypertarget{class_especie_a9efba6a1733042dab5c3cb63533e0628}\label{class_especie_a9efba6a1733042dab5c3cb63533e0628}} 
+\index{Especie@{Especie}!identificador@{identificador}}
+\index{identificador@{identificador}!Especie@{Especie}}
+\subsubsection{\texorpdfstring{identificador}{identificador}}
+{\footnotesize\ttfamily string Especie\+::identificador\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Identificador de la especie. 
+
+
+
+Definición en la línea 36 del archivo Especie.\+hh.
+
+\mbox{\Hypertarget{class_especie_ac35bb565f7346cd6317b3a8c849456d1}\label{class_especie_ac35bb565f7346cd6317b3a8c849456d1}} 
+\index{Especie@{Especie}!gen@{gen}}
+\index{gen@{gen}!Especie@{Especie}}
+\subsubsection{\texorpdfstring{gen}{gen}}
+{\footnotesize\ttfamily string Especie\+::gen\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gen de la especie. 
+
+
+
+Definición en la línea 38 del archivo Especie.\+hh.
+
+\mbox{\Hypertarget{class_especie_ab6740db160f2d7335a98fa8d9f745cbe}\label{class_especie_ab6740db160f2d7335a98fa8d9f745cbe}} 
+\index{Especie@{Especie}!kmer@{kmer}}
+\index{kmer@{kmer}!Especie@{Especie}}
+\subsubsection{\texorpdfstring{kmer}{kmer}}
+{\footnotesize\ttfamily map$<$string,int$>$ Especie\+::kmer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Cadena de kmer de la especie. 
+
+
+
+Definición en la línea 40 del archivo Especie.\+hh.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_especie_8hh}{Especie.\+hh}\item 
+\hyperlink{_especie_8cc}{Especie.\+cc}\end{DoxyCompactItemize}
